@@ -8,23 +8,24 @@
   --background-start: #4385f4;
   --background-end-rgb: 255, 255, 255;
   --primary-text: #333;
-  --primary-bg: #4385f4;
-  --infinitive: #e3ac9f;
-  --past: #a9b2dc;
-  --pastParticiple: #a4baa6;
+  --primary-bg: #2a5174;
+  --infinitive: #3d5371;
+  --past: #8a7852;
+  --pastParticiple: #c27658;
 }
 
 @media (prefers-color-scheme: dark) {
   :root {
-    --foreground-rgb: 255, 255, 255;
+    --foreground-rgb: #446f76;
     --background-start: #000000;
     --background-end: #000000;
-    --primary-bg: #fbbc05;
+    --primary-bg: #446f76;
+    --primary-text: #333;
   }
 }
 
 body {
-  color: rgb(var(--foreground-rgb));
+  color: rgb(var(--foreground));
   margin: 0;
   padding: 0;
   font-family: Arial, sans-serif;

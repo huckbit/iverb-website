@@ -13,11 +13,11 @@
 }
 
 .primary {
-  background-color: (var(--background-start));
+  background-color: (var(--primary-bg));
   color: white;
   transition: all 0.3s ease;
   &:hover {
-    background-color: (var(--background-end));
+    background-color: (var(--primary-bg));
   }
 }
 
