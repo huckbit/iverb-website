@@ -1,16 +1,11 @@
 import { useQuery, gql } from '@apollo/client';
 import client from '@/apollo-client';
-import { GetServerSideProps } from 'next';
 
 import type { Verb } from '@lib/definitions';
 
-interface VerbsProps {
-  verbs: Verb[];
-}
-
 const GET_VERBS = gql`
   query {
-    verbs {
+    verbs(limit: 10) {
       id
       infinitive
       past
@@ -22,7 +17,7 @@ const GET_VERBS = gql`
 const Listing = () => {
   const { loading, error, data } = useQuery(GET_VERBS, { client });
   if (loading) return <p>Loading...</p>;
-  if (error) return <p>Error :(</p>;
+  if (error) return <p>An error fetching the data has occurred!</p>;
 
   return (
     <ul>
