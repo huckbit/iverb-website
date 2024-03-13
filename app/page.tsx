@@ -1,13 +1,11 @@
 'use client';
+import { ThemeWrapper } from '@components/themeWrapper';
 import { Button } from '@elements/button';
-import { ThemeProvider } from 'styled-components';
-import lightTheme from '@theme/lightTheme';
-import { Listing } from '@components/listing';
 import { RandomVerb } from '@components/randomVerb';
 
 export const Home = () => {
   return (
-    <ThemeProvider theme={lightTheme}>
+    <ThemeWrapper>
       <main className='flex min-h-screen flex-col justify-between p-12'>
         <h1 className='text-center'>iVerb</h1>
         <article>
@@ -18,10 +16,9 @@ export const Home = () => {
           <p>Start your journey with verbs now!</p>
         </article>
         <Button variant='secondary'>This is my custom button</Button>
-        {/* <Listing /> */}
         <RandomVerb />
       </main>
-    </ThemeProvider>
+    </ThemeWrapper>
   );
 };
 
