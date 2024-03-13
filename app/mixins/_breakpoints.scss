@@ -1,0 +1,17 @@
+$breakpoints: (
+  'small': 576px,
+  'medium': 768px,
+  'large': 992px,
+  'xlarge': 1200px,
+);
+
+// mixin for media queries
+@mixin breakpoint($name) {
+  @if map-has-key($breakpoints, $name) {
+    @media (max-width: map-get($breakpoints, $name)) {
+      @content;
+    }
+  } @else {
+    @warn "Unknown breakpoint: #{$name}.";
+  }
+}

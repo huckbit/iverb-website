@@ -22,6 +22,7 @@
       "@elements/*": ["./app/ui/elements/*"],
       "@components/*": ["./app/ui/components/*"],
       "@theme/*": ["./app/ui/theme/*"],
+      "@mixins/*": ["./app/ui/theme/mixins*"],
       "@lib/*": ["./app/lib/*"]
     }
   },
