@@ -18,7 +18,11 @@
   color: white;
   transition: all 0.3s ease;
   &:hover {
-    background-color: (var(--primary-bg));
+    background-color: rgba(var(--primary-bg), 0.8);
+  }
+  &:disabled {
+    background-color: rgba(var(--primary-bg), 0.3);
+    color: (var(--text-disabled));
   }
 }
 

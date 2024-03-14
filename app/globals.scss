@@ -8,10 +8,11 @@
   --background-start: #4385f4;
   --background-end-rgb: 255, 255, 255;
   --primary-text: #333;
-  --primary-bg: #2a5174;
-  --infinitive: #3d5371;
-  --past: #8a7852;
-  --pastParticiple: #c27658;
+  --primary-bg: rgb(42, 81, 116);
+  --infinitive: rgb(61, 83, 113);
+  --past: rgb(138, 120, 82);
+  --pastParticiple: rgb(194, 118, 88);
+  --text-disabled: rgb(160, 160, 160);
 }
 
 @media (prefers-color-scheme: dark) {
