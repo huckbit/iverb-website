@@ -11,6 +11,9 @@ export default function Verbs() {
   const start = (page - 1) * itemsPerPage + 1;
   const end = page * itemsPerPage;
 
+  const totalItems = 200;
+  const totalPages = Math.ceil(totalItems / itemsPerPage);
+
   const handleNext = () => setPage(page + 1);
   const handlePrevious = () => setPage(page - 1);
 
@@ -26,9 +29,12 @@ export default function Verbs() {
           <Button onClick={handlePrevious} disabled={page === 1}>
             Previous
           </Button>
-          <Button onClick={handleNext}>Next</Button>
+          <Button onClick={handleNext} disabled={page === totalPages}>
+            Next
+          </Button>
         </div>
       )}
+      {page === totalPages && <p className='text-red-600'>End of list</p>}
     </>
   );
 }
