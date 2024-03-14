@@ -23,7 +23,7 @@
       "@components/*": ["./app/ui/components/*"],
       "@modules/*": ["./app/ui/modules/*"],
       "@theme/*": ["./app/ui/theme/*"],
-      "@mixins/*": ["./app/ui/theme/mixins*"],
+      "@hooks/*": ["./app/hooks/*"],
       "@lib/*": ["./app/lib/*"]
     }
   },
