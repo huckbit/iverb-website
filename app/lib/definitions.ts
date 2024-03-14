@@ -9,3 +9,8 @@ export type Verb = {
   past: string;
   pastParticiple: string;
 };
+
+export type Pagination = {
+  start: number;
+  end: number;
+};

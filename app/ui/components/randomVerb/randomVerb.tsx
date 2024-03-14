@@ -2,7 +2,7 @@ import style from './style.module.scss';
 import { useQuery, gql } from '@apollo/client';
 import client from '@/apollo-client';
 import { Block } from '@components/Block';
-import { Button } from '@elements/button';
+import { Button } from '@elements/Button';
 
 const GET_RANDOM_VERB = gql`
   query {
