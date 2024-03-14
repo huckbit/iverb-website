@@ -1,1 +1,1 @@
-export { default as RandomVerb } from './randomVerb';
+export { default as RandomVerb } from './RandomVerb';

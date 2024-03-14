@@ -1,7 +1,8 @@
 import type { Metadata } from 'next';
 import { Inter } from 'next/font/google';
-import { NavBar } from '@components/navBar';
+import { NavBar } from '@components/NavBar';
 import './globals.scss';
+import { Providers } from './providers';
 
 const inter = Inter({ subsets: ['latin'] });
 
@@ -16,10 +17,12 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang='en'>
+    <html lang='en' suppressHydrationWarning>
       <body>
-        <NavBar />
-        <div className='container mx-auto'>{children}</div>
+        <Providers>
+          <NavBar />
+          <div className='container mx-auto'>{children}</div>
+        </Providers>
       </body>
     </html>
   );

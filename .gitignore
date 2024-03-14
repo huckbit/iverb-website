@@ -34,3 +34,4 @@ yarn-error.log*
 # typescript
 *.tsbuildinfo
 next-env.d.ts
+.swc/plugins/v7_macos_x86_64_0.104.41

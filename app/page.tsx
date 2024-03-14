@@ -1,5 +1,5 @@
 'use client';
-import { RandomVerb } from '@components/randomVerb';
+import { RandomVerb } from '@components/RandomVerb';
 
 export const Home = () => {
   return (
