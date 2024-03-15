@@ -1,7 +1,7 @@
 'use client';
 import { useVerbs } from '@hooks/useVerbs';
 import { useState } from 'react';
-import { Listing } from '@modules/Listing';
+import { VerbsListing } from '@modules/VerbsListing';
 import { Button } from '@elements/Button';
 
 export default function Verbs() {
@@ -22,7 +22,7 @@ export default function Verbs() {
   return (
     <>
       <div className='flex flex-col'>
-        <Listing start={start} end={end} />
+        <VerbsListing start={start} end={end} />
       </div>
       {!loading && (
         <div>
