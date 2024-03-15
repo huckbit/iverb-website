@@ -13,8 +13,6 @@ const GET_RANDOM_VERB = gql`
   }
 `;
 
-/* TODO: add props to differentiate between auto-regenerate / next random */
-
 const RandomVerb = () => {
   const { loading, error, data, refetch } = useQuery(GET_RANDOM_VERB, { client });
 
