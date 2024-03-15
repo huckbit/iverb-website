@@ -32,10 +32,6 @@ export default function ThemeSwitch() {
   }
 
   if (resolvedTheme === 'light') {
-    return (
-      <p>
-        <MoonIcon className='h-6 w-6 text-black-500' onClick={() => setTheme('dark')} />
-      </p>
-    );
+    return <MoonIcon className='h-6 w-6 text-black-500' onClick={() => setTheme('dark')} />;
   }
 }

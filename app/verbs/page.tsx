@@ -26,12 +26,12 @@ export default function Verbs() {
       </div>
       {!loading && (
         <div>
-          <Button onClick={handlePrevious} disabled={page === 1}>
+          <button role='button' className='btn btn-primary mr-3' onClick={handlePrevious} disabled={page === 1}>
             Previous
-          </Button>
-          <Button onClick={handleNext} disabled={page === totalPages}>
+          </button>
+          <button role='button' className='btn btn-primary' onClick={handleNext} disabled={page === totalPages}>
             Next
-          </Button>
+          </button>
         </div>
       )}
       {page === totalPages && <p className='text-red-600'>End of list</p>}
