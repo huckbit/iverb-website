@@ -19,7 +19,7 @@ const RandomVerb = () => {
   useEffect(() => {
     const intervalId = setInterval(() => {
       refetch();
-    }, 7000);
+    }, 4000);
 
     // Clean up function
     return () => {
