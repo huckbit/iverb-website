@@ -1,7 +1,7 @@
 'use client';
 import { RandomVerb } from '@components/RandomVerb';
 
-export const Home = () => {
+export default function HomePage() {
   return (
     <main className='flex flex-col justify-between p-12'>
       <article>
@@ -14,6 +14,4 @@ export const Home = () => {
       <RandomVerb />
     </main>
   );
-};
-
-export default Home;
+}

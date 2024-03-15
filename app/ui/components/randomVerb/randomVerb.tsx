@@ -2,8 +2,7 @@ import { useEffect } from 'react';
 import style from './style.module.scss';
 import { useQuery, gql } from '@apollo/client';
 import client from '@/apollo-client';
-import { Block } from '@components/Block';
-import { Button } from '@elements/Button';
+import { StopIcon } from '@heroicons/react/24/outline';
 
 const GET_RANDOM_VERB = gql`
   query {
@@ -20,16 +19,16 @@ const GET_RANDOM_VERB = gql`
 const RandomVerb = () => {
   const { loading, error, data, refetch } = useQuery(GET_RANDOM_VERB, { client });
 
-  // useEffect(() => {
-  //   const intervalId = setInterval(() => {
-  //     refetch();
-  //   }, 7000);
+  useEffect(() => {
+    const intervalId = setInterval(() => {
+      refetch();
+    }, 7000);
 
-  //   // Clean up function
-  //   return () => {
-  //     clearInterval(intervalId);
-  //   };
-  // }, [refetch]);
+    // Clean up function
+    return () => {
+      clearInterval(intervalId);
+    };
+  }, [refetch]);
 
   if (loading) return <p className='text-center'>Loading...</p>;
   if (error) return <p>An error fetching the data has occurred!</p>;
@@ -37,11 +36,10 @@ const RandomVerb = () => {
   return (
     <div className={style.container}>
       <div className={style.verbContainer}>
-        <Block variant='infinitive'>{data?.randomVerb?.infinitive}</Block>
-        <Block variant='past'>{data?.randomVerb?.past}</Block>
-        <Block variant='pastParticiple'>{data?.randomVerb?.pastParticiple}</Block>
+        <span className='text-infinitive text-5xl md:text-6xl font-bold mr-2'>{data?.randomVerb?.infinitive}</span>
+        <span className='text-past text-5xl md:text-6xl font-bold mr-2'>{data?.randomVerb?.past}</span>
+        <span className='text-pastParticiple text-5xl md:text-6xl font-bold'>{data?.randomVerb?.pastParticiple}</span>
       </div>
-      <Button onClick={() => refetch()}>Refresh</Button>
     </div>
   );
 };
