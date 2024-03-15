@@ -2,7 +2,6 @@ import { useEffect } from 'react';
 import style from './style.module.scss';
 import { useQuery, gql } from '@apollo/client';
 import client from '@/apollo-client';
-import { StopIcon } from '@heroicons/react/24/outline';
 
 const GET_RANDOM_VERB = gql`
   query {

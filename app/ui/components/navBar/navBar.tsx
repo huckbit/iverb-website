@@ -7,6 +7,14 @@ import { ThemeSwitch } from '@components/ThemeSwitch';
 export default function NavBar() {
   const [isOpen, setIsOpen] = useState(false);
 
+  const NAV_ITEMS = [
+    { name: 'Verbs', href: '/verbs' },
+    { name: 'Practice', href: '/practice' },
+    { name: 'Search', href: '/search' },
+    { name: 'Test', href: '/test' },
+    { name: 'About', href: '/about' },
+  ];
+
   return (
     <nav className='bg-light-800 dark:bg-slate-800 '>
       <div className='mx-auto max-w-7xl px-2 sm:px-6 lg:px-8'>
@@ -37,12 +45,11 @@ export default function NavBar() {
             </div>
             <div className='hidden sm:ml-6 sm:block'>
               <div className='flex space-x-4'>
-                {/* <a href='#' className='bg-gray-900 text-white rounded-md px-3 py-2 text-sm font-medium' aria-current='page'>
-                  Dashboard
-                </a> */}
-                <Link href='/verbs' className='text-black hover:text-gray-600 dark:text-gray-300 dark:hover:bg-gray-700 px-3 py-2 text-sm font-medium'>
-                  Irregular verbs
-                </Link>
+                {NAV_ITEMS.map((item) => (
+                  <Link key={item.name} href={item.href} className='text-black hover:text-gray-600 dark:text-gray-300 dark:hover:bg-gray-700 px-3 py-2 text-sm font-medium'>
+                    {item.name}
+                  </Link>
+                ))}
               </div>
             </div>
           </div>
@@ -55,18 +62,11 @@ export default function NavBar() {
       <div className='sm:hidden' id='mobile-menu'>
         {isOpen && (
           <div className='space-y-1 px-2 pb-3 pt-2'>
-            <a href='#' className='bg-gray-900 text-white block rounded-md px-3 py-2 text-base font-medium' aria-current='page'>
-              Dashboard
-            </a>
-            <a href='#' className='text-gray-300 hover:bg-gray-700 hover:text-white block rounded-md px-3 py-2 text-base font-medium'>
-              Team
-            </a>
-            <a href='#' className='text-gray-300 hover:bg-gray-700 hover:text-white block rounded-md px-3 py-2 text-base font-medium'>
-              Projects
-            </a>
-            <a href='#' className='text-gray-300 hover:bg-gray-700 hover:text-white block rounded-md px-3 py-2 text-base font-medium'>
-              Calendar
-            </a>
+            {NAV_ITEMS.map((item) => (
+              <Link key={item.name} href={item.href} className='text-black hover:text-gray-600 dark:text-gray-300 dark:hover:bg-gray-700 px-3 py-2 text-sm font-medium'>
+                {item.name}
+              </Link>
+            ))}
           </div>
         )}
       </div>

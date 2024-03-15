@@ -3,6 +3,7 @@ import { useQuery, gql } from '@apollo/client';
 import client from '@/apollo-client';
 import { Block } from '@components/Block';
 import { Button } from '@elements/Button';
+import { ForwardIcon } from '@heroicons/react/24/outline';
 
 const GET_RANDOM_VERB = gql`
   query {
@@ -27,7 +28,10 @@ export default function NextRandomVerb() {
         <Block variant='past'>{data?.randomVerb?.past}</Block>
         <Block variant='pastParticiple'>{data?.randomVerb?.pastParticiple}</Block>
       </div>
-      <Button onClick={() => refetch()}>Refresh</Button>
+      <Button onClick={() => refetch()}>
+        Next
+        <ForwardIcon className='ml-2 h-6 w-6' />
+      </Button>
     </div>
   );
 }
