@@ -11,8 +11,6 @@ export default function ThemeSwitch() {
 
   useEffect(() => setMounted(true), []);
 
-  console.log(resolvedTheme);
-
   if (!mounted)
     /* show a placeholder image */
     return (

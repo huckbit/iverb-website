@@ -6,7 +6,7 @@ import { Button } from '@elements/Button';
 
 export default function Verbs() {
   const [page, setPage] = useState(1);
-  const itemsPerPage = 20;
+  const itemsPerPage = 15;
 
   const start = (page - 1) * itemsPerPage + 1;
   const end = page * itemsPerPage;
