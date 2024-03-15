@@ -7,7 +7,7 @@ export default function VerbsListing({ start, end }: Pagination = { start: 1, en
   if (loading) return <p className='text-center'>Loading...</p>;
   if (error) return <p>An error fetching the data has occurred!</p>;
   return (
-    <div>
+    <div className='flex flex-col items-center mt-5 md:mt-10'>
       {data.verbs.map((verb: Verb) => (
         <div key={verb.id} className='flex my-1'>
           <Link className='p-2' href={`/verb/${verb.infinitive}`}>

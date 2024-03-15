@@ -47,7 +47,7 @@ export default function SearchVerb() {
       {error && <p>An error fetching the data has occurred!</p>}
       {showNoResults && (
         <p className='text-center my-4 text-xl'>
-          No results found for &ldquo;<span className='text-primary'>{infinitive}</span>&ldquo; ! Please Try again.
+          No results found for &ldquo;<span className='text-primary'>{infinitive}</span>&ldquo;, please try with another infinitive verb.
         </p>
       )}
       {data?.verbByInfinitive?.infinitive && (

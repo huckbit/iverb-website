@@ -2,6 +2,7 @@
 import { useVerbs } from '@hooks/useVerbs';
 import { useState } from 'react';
 import { VerbsListing } from '@modules/VerbsListing';
+import { Button } from '@elements/Button';
 
 export default function Verbs() {
   const [page, setPage] = useState(1);
@@ -24,13 +25,13 @@ export default function Verbs() {
         <VerbsListing start={start} end={end} />
       </div>
       {!loading && (
-        <div>
-          <button role='button' className='btn btn-primary mr-3' onClick={handlePrevious} disabled={page === 1}>
+        <div className='mt-3 md:mt-6 flex flex-row items-center justify-center'>
+          <Button onClick={handlePrevious} disabled={page === 1}>
             Previous
-          </button>
-          <button role='button' className='btn btn-primary' onClick={handleNext} disabled={page === totalPages}>
+          </Button>
+          <Button className='btn btn-primary' onClick={handleNext} disabled={page === totalPages}>
             Next
-          </button>
+          </Button>
         </div>
       )}
       {page === totalPages && <p className='text-red-600'>End of list</p>}
