@@ -35,9 +35,9 @@ const RandomVerb = () => {
   return (
     <div className={style.container}>
       <div className={style.verbContainer}>
-        <span className='text-infinitive text-5xl md:text-6xl font-bold mr-2'>{data?.randomVerb?.infinitive}</span>
-        <span className='text-past text-5xl md:text-6xl font-bold mr-2'>{data?.randomVerb?.past}</span>
-        <span className='text-pastParticiple text-5xl md:text-6xl font-bold'>{data?.randomVerb?.pastParticiple}</span>
+        <span className='text-infinitive text-5xl md:text-6xl font-bold mr-2 font-playfairDisplay'>{data?.randomVerb?.infinitive}</span>
+        <span className='text-past text-5xl md:text-6xl font-bold mr-2 font-playfairDisplay'>{data?.randomVerb?.past}</span>
+        <span className='text-pastParticiple text-5xl md:text-6xl font-bold font-playfairDisplay'>{data?.randomVerb?.pastParticiple}</span>
       </div>
     </div>
   );

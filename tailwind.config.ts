@@ -14,6 +14,10 @@ const config: Config = {
         past: '#8a7852',
         pastParticiple: '#c27658',
       },
+      fontFamily: {
+        lato: ['Lato', 'sans-serif'],
+        playfairDisplay: ['Playfair Display', 'serif'],
+      },
     },
   },
   darkMode: 'class',
