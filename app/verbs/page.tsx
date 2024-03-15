@@ -2,11 +2,10 @@
 import { useVerbs } from '@hooks/useVerbs';
 import { useState } from 'react';
 import { VerbsListing } from '@modules/VerbsListing';
-import { Button } from '@elements/Button';
 
 export default function Verbs() {
   const [page, setPage] = useState(1);
-  const itemsPerPage = 15;
+  const itemsPerPage = 10;
 
   const start = (page - 1) * itemsPerPage + 1;
   const end = page * itemsPerPage;

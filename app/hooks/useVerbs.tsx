@@ -1,5 +1,6 @@
 import { useQuery, gql } from '@apollo/client';
 import client from '@/apollo-client';
+import { cache } from 'react';
 
 import type { Pagination } from '@lib/definitions';
 
