@@ -5,7 +5,7 @@ import style from './style.module.scss';
 export default function Page() {
   return (
     <div className={style.container}>
-      <h1 className='text-center'>Practice your verbs here!</h1>
+      <h1 className='text-center'>Can you guess the result?</h1>
       <NextRandomVerb />
     </div>
   );
