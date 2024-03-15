@@ -25,7 +25,7 @@ export default function SearchVerb() {
   const debouncedInfinitive = useDebounce(infinitive, 500);
 
   /* Using the custom Hook to get the verb */
-  const { loading, data, error } = useVerb({ infinitive: debouncedInfinitive });
+  const { loading, data, error } = useVerb({ infinitive: debouncedInfinitive.toLowerCase() });
 
   /* Showing the message with some delay if the verb has not been found */
   useEffect(() => {
