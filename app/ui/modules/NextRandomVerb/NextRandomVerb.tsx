@@ -2,6 +2,7 @@ import style from './style.module.scss';
 import { useState } from 'react';
 import { useQuery, gql } from '@apollo/client';
 import client from '@/apollo-client';
+import { motion } from 'framer-motion';
 import { Block } from '@components/Block';
 import { Button } from '@elements/Button';
 import { ForwardIcon, SparklesIcon } from '@heroicons/react/24/outline';
@@ -28,6 +29,19 @@ export default function NextRandomVerb() {
     }, 100);
   };
 
+  const variants = {
+    hidden: { opacity: 0, y: -20 },
+    visible: (i: number) => ({
+      opacity: 1,
+      y: 0,
+      transition: {
+        delay: i * 0.2,
+        duration: 0.5,
+        ease: 'easeOut',
+      },
+    }),
+  };
+
   return (
     <div className={style.container}>
       {loading ? (
@@ -35,9 +49,15 @@ export default function NextRandomVerb() {
       ) : (
         <>
           <div className={style.verbContainer}>
-            <Block variant='infinitive'>{data?.randomVerb?.infinitive}</Block>
-            <Block variant='past'>{showResult ? data?.randomVerb?.past : '?'}</Block>
-            <Block variant='pastParticiple'>{showResult ? data?.randomVerb?.pastParticiple : '?'}</Block>
+            <motion.div variants={variants} custom={0} initial='hidden' animate='visible'>
+              <Block variant='infinitive'>{data?.randomVerb?.infinitive}</Block>
+            </motion.div>
+            <motion.div variants={variants} custom={1} initial='hidden' animate='visible'>
+              <Block variant='past'>{showResult ? data?.randomVerb?.past : '?'}</Block>
+            </motion.div>
+            <motion.div variants={variants} custom={2} initial='hidden' animate='visible'>
+              <Block variant='pastParticiple'>{showResult ? data?.randomVerb?.pastParticiple : '?'}</Block>
+            </motion.div>
           </div>
           <div className='flex'>
             <Button onClick={() => setShowResult(true)}>
