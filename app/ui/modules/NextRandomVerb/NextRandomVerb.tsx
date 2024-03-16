@@ -20,14 +20,18 @@ const GET_RANDOM_VERB = gql`
 
 export default function NextRandomVerb() {
   const [showResult, setShowResult] = useState(false);
-
+  const [showInfinitive, setShowInfinitive] = useState(true);
+  const [key, setKey] = useState(0);
   const { loading, error, data, refetch } = useQuery(GET_RANDOM_VERB, {
     client,
   });
 
   const handleNext = () => {
     refetch();
+    setKey((prevKey) => prevKey + 1);
+    setShowInfinitive(false);
     setTimeout(() => {
+      setShowInfinitive(true);
       setShowResult(false);
     }, 100);
   };
@@ -40,10 +44,12 @@ export default function NextRandomVerb() {
         <>
           <div className={style.verbContainer}>
             <motion.div variants={fadeInVariants} custom={0} initial='hidden' animate='visible'>
-              <Block variant='infinitive'>{data?.randomVerb?.infinitive}</Block>
+              <Block key={key} variant='infinitive'>
+                {showInfinitive ? data?.randomVerb?.infinitive : <SparklesIcon className='ml-2 h-6 w-6' />}
+              </Block>
             </motion.div>
             <motion.div variants={fadeInVariants} custom={1} initial='hidden' animate='visible'>
-              <Block variant='past'>
+              <Block key={key} variant='past'>
                 {showResult ? (
                   <motion.div variants={rotateTextVariants} custom={0} initial='hidden' animate='visible'>
                     {data?.randomVerb?.past}
@@ -54,7 +60,7 @@ export default function NextRandomVerb() {
               </Block>
             </motion.div>
             <motion.div variants={fadeInVariants} custom={2} initial='hidden' animate='visible'>
-              <Block variant='pastParticiple'>
+              <Block key={key} variant='pastParticiple'>
                 {showResult ? (
                   <motion.div variants={rotateTextVariants} custom={0} initial='hidden' animate='visible'>
                     {data?.randomVerb?.pastParticiple}
