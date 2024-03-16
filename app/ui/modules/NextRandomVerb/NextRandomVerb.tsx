@@ -45,15 +45,17 @@ export default function NextRandomVerb() {
           <div className={style.verbContainer}>
             <motion.div variants={fadeInVariants} custom={0} initial='hidden' animate='visible'>
               <Block key={key} variant='infinitive'>
-                {showInfinitive ? (
-                  <motion.span key='text' initial={{ opacity: 0 }} animate={{ opacity: 1 }} exit={{ opacity: 0 }}>
-                    {data?.randomVerb?.infinitive}
-                  </motion.span>
-                ) : (
-                  <motion.div key='icon' initial={{ opacity: 0 }} animate={{ opacity: 1 }} exit={{ opacity: 0 }}>
-                    {''}
-                  </motion.div>
-                )}
+                <AnimatePresence>
+                  {showInfinitive ? (
+                    <motion.span key='text' initial={{ opacity: 0 }} animate={{ opacity: 1 }} exit={{ opacity: 0 }}>
+                      {data?.randomVerb?.infinitive}
+                    </motion.span>
+                  ) : (
+                    <motion.div key='icon' initial={{ opacity: 0 }} animate={{ opacity: 1 }} exit={{ opacity: 0 }}>
+                      {''}
+                    </motion.div>
+                  )}
+                </AnimatePresence>
               </Block>
             </motion.div>
             <motion.div variants={fadeInVariants} custom={1} initial='hidden' animate='visible'>
