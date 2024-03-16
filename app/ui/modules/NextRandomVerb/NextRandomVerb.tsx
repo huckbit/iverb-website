@@ -6,6 +6,7 @@ import { motion } from 'framer-motion';
 import { Block } from '@components/Block';
 import { Button } from '@elements/Button';
 import { ForwardIcon, SparklesIcon } from '@heroicons/react/24/outline';
+import { fadeInVariants, rotateTextVariants } from '@global/motionVariants';
 
 const GET_RANDOM_VERB = gql`
   query {
@@ -19,27 +20,16 @@ const GET_RANDOM_VERB = gql`
 
 export default function NextRandomVerb() {
   const [showResult, setShowResult] = useState(false);
-  const { loading, error, data, refetch } = useQuery(GET_RANDOM_VERB, { client });
-  if (error) return <p>An error fetching the data has occurred!</p>;
+
+  const { loading, error, data, refetch } = useQuery(GET_RANDOM_VERB, {
+    client,
+  });
 
   const handleNext = () => {
     refetch();
     setTimeout(() => {
       setShowResult(false);
     }, 100);
-  };
-
-  const variants = {
-    hidden: { opacity: 0, y: -20 },
-    visible: (i: number) => ({
-      opacity: 1,
-      y: 0,
-      transition: {
-        delay: i * 0.2,
-        duration: 0.5,
-        ease: 'easeOut',
-      },
-    }),
   };
 
   return (
@@ -49,14 +39,30 @@ export default function NextRandomVerb() {
       ) : (
         <>
           <div className={style.verbContainer}>
-            <motion.div variants={variants} custom={0} initial='hidden' animate='visible'>
+            <motion.div variants={fadeInVariants} custom={0} initial='hidden' animate='visible'>
               <Block variant='infinitive'>{data?.randomVerb?.infinitive}</Block>
             </motion.div>
-            <motion.div variants={variants} custom={1} initial='hidden' animate='visible'>
-              <Block variant='past'>{showResult ? data?.randomVerb?.past : '?'}</Block>
+            <motion.div variants={fadeInVariants} custom={1} initial='hidden' animate='visible'>
+              <Block variant='past'>
+                {showResult ? (
+                  <motion.div variants={rotateTextVariants} custom={0} initial='hidden' animate='visible'>
+                    {data?.randomVerb?.past}
+                  </motion.div>
+                ) : (
+                  '?'
+                )}
+              </Block>
             </motion.div>
-            <motion.div variants={variants} custom={2} initial='hidden' animate='visible'>
-              <Block variant='pastParticiple'>{showResult ? data?.randomVerb?.pastParticiple : '?'}</Block>
+            <motion.div variants={fadeInVariants} custom={2} initial='hidden' animate='visible'>
+              <Block variant='pastParticiple'>
+                {showResult ? (
+                  <motion.div variants={rotateTextVariants} custom={0} initial='hidden' animate='visible'>
+                    {data?.randomVerb?.pastParticiple}
+                  </motion.div>
+                ) : (
+                  '?'
+                )}
+              </Block>
             </motion.div>
           </div>
           <div className='flex'>
@@ -71,6 +77,7 @@ export default function NextRandomVerb() {
           </div>
         </>
       )}
+      {error && <p>An error fetching the data has occurred!</p>}
     </div>
   );
 }

@@ -19,6 +19,7 @@
     ],
     "paths": {
       "@/*": ["./*"],
+      "@global/*": ["./app/*"],
       "@elements/*": ["./app/ui/elements/*"],
       "@components/*": ["./app/ui/components/*"],
       "@modules/*": ["./app/ui/modules/*"],
