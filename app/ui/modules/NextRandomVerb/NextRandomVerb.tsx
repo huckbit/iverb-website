@@ -27,13 +27,13 @@ export default function NextRandomVerb() {
   });
 
   const handleNext = () => {
+    setShowInfinitive(false);
     refetch();
     setKey((prevKey) => prevKey + 1);
-    setShowInfinitive(false);
     setTimeout(() => {
       setShowInfinitive(true);
       setShowResult(false);
-    }, 100);
+    }, 200);
   };
 
   return (
