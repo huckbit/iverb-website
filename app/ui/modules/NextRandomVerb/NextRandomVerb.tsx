@@ -51,7 +51,7 @@ export default function NextRandomVerb() {
                   </motion.span>
                 ) : (
                   <motion.div key='icon' initial={{ opacity: 0 }} animate={{ opacity: 1 }} exit={{ opacity: 0 }}>
-                    {'Loading...'}
+                    {''}
                   </motion.div>
                 )}
               </Block>
