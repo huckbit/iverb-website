@@ -14,3 +14,14 @@ export type Pagination = {
   start: number;
   end: number;
 };
+
+export type DictionaryData = {
+  meanings: {
+    definitions: {
+      definition: string;
+      synonyms: string[];
+      antonyms: string[];
+      example: string;
+    }[];
+  }[];
+};

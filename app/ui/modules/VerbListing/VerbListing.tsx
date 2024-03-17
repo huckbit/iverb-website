@@ -3,17 +3,8 @@ import { useVerb } from '@hooks/useVerb';
 import { Block } from '@components/Block';
 import useDictionaryAPI from '@hooks/useDictionaryAPI';
 import style from './VerbListing.module.scss';
+import type { DictionaryData } from '@lib/definitions';
 
-type DictionaryData = {
-  meanings: {
-    definitions: {
-      definition: string;
-      synonyms: string[];
-      antonyms: string[];
-      example: string;
-    }[];
-  }[];
-};
 interface DictionaryAPIResult {
   dictionaryData: DictionaryData[] | null;
   dictionaryError: Error | null;
