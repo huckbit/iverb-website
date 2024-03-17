@@ -2,7 +2,7 @@ import style from './style.module.scss';
 import { useState } from 'react';
 import { useQuery, gql } from '@apollo/client';
 import client from '@/apollo-client';
-import { AnimatePresence, motion } from 'framer-motion';
+import { motion } from 'framer-motion';
 import { Block } from '@components/Block';
 import { Button } from '@elements/Button';
 import { ForwardIcon, SparklesIcon } from '@heroicons/react/24/outline';
@@ -33,7 +33,7 @@ export default function NextRandomVerb() {
     setTimeout(() => {
       setShowInfinitive(true);
       setShowResult(false);
-    }, 200);
+    }, 400);
   };
 
   return (
@@ -45,17 +45,7 @@ export default function NextRandomVerb() {
           <div className={style.verbContainer}>
             <motion.div variants={fadeInVariants} custom={0} initial='hidden' animate='visible'>
               <Block key={key} variant='infinitive'>
-                <AnimatePresence>
-                  {showInfinitive ? (
-                    <motion.span key='text' initial={{ opacity: 0 }} animate={{ opacity: 1 }} exit={{ opacity: 0 }}>
-                      {data?.randomVerb?.infinitive}
-                    </motion.span>
-                  ) : (
-                    <motion.div key='icon' initial={{ opacity: 0 }} animate={{ opacity: 1 }} exit={{ opacity: 0 }}>
-                      {''}
-                    </motion.div>
-                  )}
-                </AnimatePresence>
+                {data?.randomVerb?.infinitive}
               </Block>
             </motion.div>
             <motion.div variants={fadeInVariants} custom={1} initial='hidden' animate='visible'>

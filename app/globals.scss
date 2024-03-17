@@ -64,6 +64,11 @@ h6 {
   height: 80vh;
 }
 
+.page-container-50 {
+  @extend .page-container;
+  height: 50vh;
+}
+
 @layer utilities {
   .text-balance {
     text-wrap: balance;
