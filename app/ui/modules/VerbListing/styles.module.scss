@@ -1,0 +1,8 @@
+@import '../../../settings';
+
+.meaningWrapper {
+  max-width: 90vw;
+  @include breakpoint('medium') {
+    max-width: 60vw;
+  }
+}

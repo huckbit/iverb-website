@@ -42,6 +42,7 @@ export default function NextRandomVerb() {
         <p className='text-center'>Loading...</p>
       ) : (
         <>
+          <h1 className='text-center'>Can you guess the result?</h1>
           <div className={style.verbContainer}>
             <motion.div variants={fadeInVariants} custom={0} initial='hidden' animate='visible'>
               <Block key={key} variant='infinitive'>

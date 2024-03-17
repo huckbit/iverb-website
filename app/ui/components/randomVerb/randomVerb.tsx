@@ -1,5 +1,5 @@
 import { useEffect } from 'react';
-import style from './style.module.scss';
+import style from './styles.module.scss';
 import { useQuery, gql } from '@apollo/client';
 import client from '@/apollo-client';
 

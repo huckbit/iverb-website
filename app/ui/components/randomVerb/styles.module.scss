@@ -11,8 +11,9 @@
   gap: 1rem;
   justify-content: center;
   margin: 2rem 0;
+  flex-direction: column;
 
-  @include breakpoint('small') {
-    flex-direction: column;
+  @include breakpoint('medium') {
+    flex-direction: row;
   }
 }
