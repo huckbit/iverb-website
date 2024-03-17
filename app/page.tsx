@@ -1,8 +1,6 @@
 'use client';
 import { RandomVerb } from '@components/RandomVerb';
 import Link from 'next/link';
-import { motion } from 'framer-motion';
-import { fadeInVariants } from '@global/motionVariants';
 
 export default function HomePage() {
   return (
@@ -22,9 +20,7 @@ export default function HomePage() {
         </div>
       </article>
       <div className='mt-5'>
-        <motion.div variants={fadeInVariants} custom={0} initial='hidden' animate='visible'>
-          <RandomVerb />
-        </motion.div>
+        <RandomVerb />
       </div>
       <div className='md:leading-loose md:mt-10 md:ml-20'>
         <p className='md:text-xl'>
