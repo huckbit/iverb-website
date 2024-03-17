@@ -1,4 +1,4 @@
-import style from './style.module.scss';
+import style from './NextRandomVerb.module.scss';
 import { useState } from 'react';
 import { useQuery, gql } from '@apollo/client';
 import client from '@/apollo-client';

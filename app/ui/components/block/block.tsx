@@ -1,4 +1,4 @@
-import style from './style.module.scss';
+import style from './Block.module.scss';
 
 export interface BlockProps extends React.HTMLAttributes<HTMLDivElement> {
   children: React.ReactNode;

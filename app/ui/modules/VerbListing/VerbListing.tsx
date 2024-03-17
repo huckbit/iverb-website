@@ -2,7 +2,7 @@ import { useState, useEffect } from 'react';
 import { useVerb } from '@hooks/useVerb';
 import { Block } from '@components/Block';
 import useDictionaryAPI from '@hooks/useDictionaryAPI';
-import style from './styles.module.scss';
+import style from './VerbListing.module.scss';
 
 type DictionaryData = {
   meanings: {

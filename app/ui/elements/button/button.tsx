@@ -1,4 +1,4 @@
-import style from './style.module.scss';
+import style from './Button.module.scss';
 
 export interface ButtonProps extends React.ButtonHTMLAttributes<HTMLButtonElement> {
   children: React.ReactNode;
