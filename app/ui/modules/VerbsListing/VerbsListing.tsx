@@ -1,8 +1,9 @@
-import type { Verb, Pagination } from '@lib/definitions';
+import { useEffect } from 'react';
 import { useVerbs } from '@hooks/useVerbs';
 import Link from 'next/link';
 import { motion } from 'framer-motion';
 import { fadeInVariants } from '@global/motionVariants';
+import type { Verb, Pagination } from '@lib/definitions';
 
 export default function VerbsListing({ start, end }: Pagination = { start: 1, end: 10 }) {
   const fadeInWithDelayVariants = {
@@ -16,7 +17,13 @@ export default function VerbsListing({ start, end }: Pagination = { start: 1, en
     }),
   };
 
-  const { loading, error, data } = useVerbs({ start, end });
+  const { loading, error, data, clearCache } = useVerbs({ start, end });
+
+  useEffect(() => {
+    clearCache();
+    console.log('Cache cleared');
+  }, [start, end, clearCache]);
+
   if (loading) return <p className='text-center'>Loading...</p>;
   if (error) return <p>An error fetching the data has occurred!</p>;
   return (

@@ -1,6 +1,5 @@
 import { useQuery, gql } from '@apollo/client';
 import client from '@/apollo-client';
-import { cache } from 'react';
 
 import type { Pagination } from '@lib/definitions';
 
@@ -18,5 +17,13 @@ const GET_VERBS_SET = gql`
 export function useVerbs({ start, end }: Pagination = { start: 1, end: 25 }) {
   const { loading, error, data, refetch } = useQuery(GET_VERBS_SET, { variables: { start, end }, client });
 
-  return { loading, data, error, refetch };
+  const clearCache = async () => {
+    try {
+      await client.resetStore();
+    } catch (error) {
+      console.error('Error clearing cache:', error);
+    }
+  };
+
+  return { loading, data, error, refetch, clearCache };
 }
