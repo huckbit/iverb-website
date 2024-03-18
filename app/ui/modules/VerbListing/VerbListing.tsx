@@ -13,9 +13,11 @@ interface DictionaryAPIResult {
 export default function VerbListing({ infinitive }: { infinitive: string }) {
   const [dictionaryData, setDictionaryData] = useState<DictionaryData[] | null>(null);
   const [dictionaryError, setDictionaryError] = useState<Error | null>(null);
-  const { loading, data, error } = useVerb({ infinitive: infinitive });
+  const { loading: verbLoading, data, error } = useVerb({ infinitive: infinitive });
 
   const dictionaryAPIResult: DictionaryAPIResult = useDictionaryAPI(infinitive);
+
+  const loading = verbLoading;
 
   useEffect(() => {
     setDictionaryData(dictionaryAPIResult?.dictionaryData);
