@@ -6,7 +6,7 @@ import { Pagination } from '@components/Pagination';
 
 export default function Page() {
   const [page, setPage] = useState(1);
-  const itemsPerPage = 20;
+  const itemsPerPage = 40;
 
   const start = (page - 1) * itemsPerPage + 1;
   const end = page * itemsPerPage;
@@ -20,10 +20,16 @@ export default function Page() {
 
   return (
     <>
-      <div className='flex flex-col'>
-        <VerbsListing start={start} end={end} />
+      <h2 className='mt-10 font-playfairDisplay text-5xl'>Irregular verbs list</h2>
+      <p>Click on any verb to explore its details, including various forms, conjugations, meaning.</p>
+      <VerbsListing start={start} end={end} />
+      <div className='my-5'>
+        {!loading && (
+          <div className='my-10'>
+            <Pagination page={page} totalPages={totalPages} handlePageChange={handlePageChange} />
+          </div>
+        )}
       </div>
-      {!loading && <Pagination page={page} totalPages={totalPages} handlePageChange={handlePageChange} />}
     </>
   );
 }

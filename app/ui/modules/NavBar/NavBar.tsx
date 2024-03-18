@@ -2,21 +2,22 @@
 import { useState } from 'react';
 import Image from 'next/image';
 import Link from 'next/link';
+import { useTheme } from 'next-themes';
 import { ThemeSwitch } from '@components/ThemeSwitch';
 
 export default function NavBar() {
   const [isOpen, setIsOpen] = useState(false);
+  const { resolvedTheme } = useTheme();
 
   const NAV_ITEMS = [
     { name: 'Verbs', href: '/verbs' },
     { name: 'Practice', href: '/practice' },
     { name: 'Search', href: '/search' },
-    { name: 'Test', href: '/test' },
     { name: 'About', href: '/about' },
   ];
 
   return (
-    <nav className='bg-light-800 dark:bg-slate-800'>
+    <nav className='bg-infinitiveLight dark:bg-slate-800'>
       <div className='mx-auto max-w-7xl px-2 sm:px-6 lg:px-8'>
         <div className='relative flex h-16 items-center justify-between'>
           <div className='absolute inset-y-0 left-0 flex items-center sm:hidden'>
@@ -40,7 +41,7 @@ export default function NavBar() {
           <div className='flex flex-1 items-center justify-center sm:items-stretch sm:justify-start'>
             <div className='flex flex-shrink-0 items-center'>
               <Link href='/'>
-                <Image src='/media/logo.png' alt='iVerb logo' width={77} height={32} />
+                <Image src={resolvedTheme === 'light' ? '/media/logo.png' : '/media/logo-dark.png'} className='dark:bg-white' alt='iVerb logo' width={77} height={32} />
               </Link>
             </div>
             <div className='hidden sm:ml-6 sm:block'>

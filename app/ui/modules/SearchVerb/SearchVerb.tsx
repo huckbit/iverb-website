@@ -51,12 +51,10 @@ export default function SearchVerb() {
         </p>
       )}
       {data?.verbByInfinitive?.infinitive && (
-        <div className='page-container-50'>
-          <div className='flex flex-col md:flex-row justify-center gap-3 mt-5 md:mt-10'>
-            <Block variant='infinitive'>{data?.verbByInfinitive?.infinitive}</Block>
-            <Block variant='past'>{data?.verbByInfinitive?.past}</Block>
-            <Block variant='pastParticiple'>{data?.verbByInfinitive?.pastParticiple}</Block>
-          </div>
+        <div className='flex flex-col md:flex-row justify-center gap-3 mt-5 md:mt-10'>
+          <Block variant='infinitive'>{data?.verbByInfinitive?.infinitive}</Block>
+          <Block variant='past'>{data?.verbByInfinitive?.past}</Block>
+          <Block variant='pastParticiple'>{data?.verbByInfinitive?.pastParticiple}</Block>
         </div>
       )}
     </>

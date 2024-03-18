@@ -11,6 +11,7 @@ const config: Config = {
       colors: {
         primary: '#446f76',
         infinitive: '#3d5371',
+        infinitiveLight: '#3d537186',
         past: '#8a7852',
         pastParticiple: '#c27658',
       },

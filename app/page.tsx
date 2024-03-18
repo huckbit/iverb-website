@@ -4,10 +4,10 @@ import Link from 'next/link';
 
 export default function HomePage() {
   return (
-    <main className='flex flex-col justify-between p-12'>
-      <article className='md:leading-relaxed md:mt-10 md:mx-20'>
+    <>
+      <article className='md:leading-relaxed md:mt-10'>
         <div className='md:leading-loose'>
-          <h1 className='font-playfairDisplay md:text-5xl'>Welcome to iVerb </h1>
+          <h1>Welcome to iVerb </h1>
           <h2 className='font-playfairDisplay italic'>– Your Ultimate Guide to Mastering 200 Irregular English Verbs!</h2>
         </div>
         <div className='md:leading-loose mt-2 md:mt-4 space-y-3'>
@@ -22,23 +22,19 @@ export default function HomePage() {
       <div className='mt-5'>
         <RandomVerb />
       </div>
-      <div className='md:leading-loose md:mt-10 md:ml-20'>
+      <div className='md:leading-loose md:mt-10'>
         <p className='md:text-xl'>
           You, can{' '}
           <Link className='text-primary hover:text-gray-500 font-playfairDisplay text-xl' href='/verbs'>
             study
           </Link>
-          ,{' '}
+          , and{' '}
           <Link href='/practice' className='text-primary hover:text-gray-500 font-playfairDisplay text-xl'>
             practice
-          </Link>{' '}
-          and{' '}
-          <Link href='/test' className='text-primary hover:text-gray-500 font-playfairDisplay text-xl'>
-            test
           </Link>{' '}
           your knowledge of irregular verbs with iVerb.
         </p>
       </div>
-    </main>
+    </>
   );
 }

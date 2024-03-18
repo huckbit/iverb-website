@@ -9,11 +9,15 @@
   --background-start: #4385f4;
   --background-end-rgb: 255, 255, 255;
   --primary-text: #333;
-  --primary-bg: rgb(42, 81, 116);
-  --infinitive: rgb(61, 83, 113);
+  --primary-bg: #2a5174;
+  --secondary-bg: #ebe8e8;
+  --infinitive: #3d5371;
   --past: #8a7852;
   --pastParticiple: #c27658;
-  --text-disabled: rgb(160, 160, 160);
+  --text-disabled: #a0a0a0;
+  --infinitivelight: #3d537186;
+  --past-500: #8a785272;
+  --pastParticiple-500: #c276584a;
 }
 
 @media (prefers-color-scheme: dark) {
@@ -26,14 +30,26 @@
   }
 }
 
+body {
+  position: relative;
+}
+
 p {
   font-size: 1rem;
-  line-height: 1.5;
+  line-height: 2;
+  margin: 1rem auto;
+  @include breakpoint('medium') {
+    font-size: 1.3rem;
+  }
+}
+
+a {
+  color: var(--primary-bg);
 }
 
 h1 {
-  font-size: 2rem;
-  font-family: var(--font-lato);
+  font-size: 3rem;
+  font-family: playfair display, serif;
 }
 
 h2 {
@@ -55,6 +71,36 @@ h5 {
 h6 {
   font-size: 0.875rem;
 }
+.layout-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin: auto 10%;
+  @include breakpoint('medium') {
+    margin: auto 15%;
+  }
+  @include breakpoint('xlarge') {
+    margin: auto 20%;
+  }
+}
+
+.layoutSvg {
+  display: none;
+  @include breakpoint('large') {
+    display: inherit;
+    background-image: url('/media/geometrics.svg');
+    background-repeat: no-repeat;
+    background-position: left bottom;
+    background-repeat: no-repeat;
+    position: fixed;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    z-index: -1;
+  }
+}
 
 .page-container {
   display: flex;
@@ -67,6 +113,16 @@ h6 {
 .page-container-50 {
   @extend .page-container;
   height: 50vh;
+}
+
+.cards-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
+.card {
+  flex: 0 0 48%;
 }
 
 @layer utilities {

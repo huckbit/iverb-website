@@ -1,4 +1,5 @@
 import { Button } from '@elements/Button';
+import { ChevronLeftIcon, ChevronRightIcon } from '@heroicons/react/24/outline';
 
 interface PaginationProps {
   page: number;
@@ -23,7 +24,7 @@ const Pagination: React.FC<PaginationProps> = ({ page, totalPages, handlePageCha
     <nav aria-label='Pagination'>
       <div className='mt-3 md:mt-6 flex flex-row items-center justify-center'>
         <Button onClick={handlePrevPage} disabled={page === 1}>
-          Previous
+          <ChevronLeftIcon className='w-6 h-6' />
         </Button>
         {[...Array(totalPages)].map((_, i) => (
           <Button key={i} onClick={() => handlePageChange(i + 1)} disabled={page === i + 1}>
@@ -31,7 +32,7 @@ const Pagination: React.FC<PaginationProps> = ({ page, totalPages, handlePageCha
           </Button>
         ))}
         <Button onClick={handleNextPage} disabled={page === totalPages}>
-          Next
+          <ChevronRightIcon className='w-6 h-6' />
         </Button>
       </div>
     </nav>

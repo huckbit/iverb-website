@@ -1,0 +1,53 @@
+@import '../../../settings';
+
+.cardWrapper {
+  padding: 1.5rem 2rem;
+  border-radius: 0.5rem;
+  background-color: var(--secondary-bg);
+  min-width: 18rem;
+  box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.1);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  transition: all 0.3s ease-in-out;
+  color: var(--primary-text);
+  &:hover {
+    cursor: pointer;
+    transform: translateX(0.2rem);
+    .chevronContainer {
+      transform: translateX(0.5rem);
+    }
+  }
+
+  @include breakpoint(large) {
+    min-width: 14rem;
+    min-height: 8.5rem;
+  }
+  @include breakpoint(colossal) {
+    min-width: 25rem;
+  }
+}
+.cardWrapperDark {
+  @extend .cardWrapper;
+  background-color: var(--secondary-bg);
+}
+.chevronContainer {
+  transition: transform 0.3s ease-in-out;
+}
+
+.content {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  padding: 1rem;
+  margin-right: 4rem;
+  flex-grow: 1;
+}
+
+.title {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: var(--primary-text);
+  font-family: playfair display, serif;
+  font-style: italic;
+}

@@ -9,9 +9,7 @@ export default function Page({ params }: { params: { infinitive: string } }) {
   const router = useRouter();
 
   const goBack = () => {
-    if (typeof window !== 'undefined') {
-      router.back();
-    }
+    router.back();
   };
 
   return (
@@ -19,10 +17,12 @@ export default function Page({ params }: { params: { infinitive: string } }) {
       <div className='page-container'>
         <VerbListing infinitive={infinitive} />
       </div>
-      <Button variant='primary' className='mb-10' onClick={goBack}>
-        <ArrowLeftCircleIcon className='w-6 h-6 mr-2' />
-        Go Back
-      </Button>
+      <div className='mb-10 flex justify-center'>
+        <Button variant='primary' className='mb-10' onClick={goBack}>
+          <ArrowLeftCircleIcon className='w-6 h-6 mr-2' />
+          Go Back
+        </Button>
+      </div>
     </div>
   );
 }

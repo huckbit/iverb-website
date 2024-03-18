@@ -6,6 +6,9 @@
   font-size: 3rem;
   min-width: 250px;
   font-family: 'Playfair Display', serif;
+  display: flex;
+  align-items: center;
+  justify-content: center;
   :global {
     animation: fadeIn 1s ease-out;
   }
@@ -25,4 +28,8 @@
 }
 .pastParticiple {
   background-color: var(--pastParticiple);
+}
+
+.longText {
+  font-size: 1.3rem;
 }
