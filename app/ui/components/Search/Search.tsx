@@ -1,7 +1,7 @@
 import { MagnifyingGlassIcon, XCircleIcon } from '@heroicons/react/24/outline';
 import { useState } from 'react';
 
-interface Props {
+export interface Props {
   inputValue: string;
   placeholder?: string;
   setInputValue: (text: string) => void;
@@ -32,14 +32,11 @@ export default function Search({ inputValue, setInputValue, placeholder }: Props
         placeholder={placeholder || 'Search'}
       />
       {inputValue && isFocused && (
-        <button type='button' onClick={handleClearInput} className='right-3 top-1/2 transform -translate-y-1/2 text-gray-400'>
-          <XCircleIcon className='absolute left-3 top-1/2 h-[18px] w-[18px] -translate-y-1/2 text-gray-500 peer-focus:text-gray-90 cursor-pointer' />
+        <button onClick={handleClearInput} className='right-3 top-1/2 transform -translate-y-1/2 text-gray-400'>
+          <XCircleIcon role='button' className='absolute left-3 top-1/2 h-[18px] w-[18px] -translate-y-1/2 text-gray-500 peer-focus:text-gray-90 cursor-pointer' />
         </button>
       )}
       <MagnifyingGlassIcon className='absolute left-3 top-1/2 h-[18px] w-[18px] -translate-y-1/2 text-gray-500 peer-focus:text-gray-900 dark:text-slate-200' />
-      <button type='submit' className='sr-only'>
-        Search
-      </button>
     </div>
   );
 }

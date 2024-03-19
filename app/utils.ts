@@ -16,7 +16,7 @@ export function isLongString(input: string) {
  */
 export function truncateWithEllipsis(input: string, length: number = 12) {
   if (input.length > length) {
-    return input.substring(0, length) + '...';
+    return input.substring(0, length).trim() + '...';
   } else {
     return input;
   }

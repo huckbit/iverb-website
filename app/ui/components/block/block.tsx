@@ -6,7 +6,7 @@ export interface BlockProps extends React.HTMLAttributes<HTMLDivElement> {
   variant?: 'past' | 'infinitive' | 'pastParticiple';
 }
 
-const Block = ({ children, className, variant = 'past', ...rest }: BlockProps) => {
+export default function Block({ children, className, variant = 'past', ...rest }: BlockProps) {
   /**
    * Determines if the children of the component is a long string.
    * A string is considered long if its length exceeds 20 chars.
@@ -21,6 +21,4 @@ const Block = ({ children, className, variant = 'past', ...rest }: BlockProps) =
       {children}
     </div>
   );
-};
-
-export default Block;
+}

@@ -1,23 +1,23 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`matches snapshot 1`] = `
+exports[`Button matches snapshot 1`] = `
 {
   "asFragment": [Function],
   "baseElement": <body>
     <div>
-      <div
-        class="block past false"
+      <button
+        class="btn primary"
       >
-        was
-      </div>
+        Click me
+      </button>
     </div>
   </body>,
   "container": <div>
-    <div
-      class="block past false"
+    <button
+      class="btn primary"
     >
-      was
-    </div>
+      Click me
+    </button>
   </div>,
   "debug": [Function],
   "findAllByAltText": [Function],

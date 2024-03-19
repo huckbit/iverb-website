@@ -5,8 +5,8 @@ export default function Page() {
     <article className='md:leading-10 pt-10 md:mt-10'>
       <h1>About iVerb</h1>
       <p>
-        Welcome to iVerb, the ultimate resource for mastering British English irregular verbs! Developed by Max with a passion for language learning, iVerb is designed to empower learners of all
-        levels to conquer the nuances of irregular verb usage with ease
+        Welcome to iVerb, the ultimate resource for mastering British English irregular verbs! Developed by Max with a passion for tech but also language learning, iVerb is designed to empower
+        learners of all levels to conquer the nuances of irregular verb usage with ease.
       </p>
       <p>
         With iVerb, you gain access to a comprehensive database of the most common irregular verbs in British English, meticulously curated and organized for efficient learning. From essential verb
