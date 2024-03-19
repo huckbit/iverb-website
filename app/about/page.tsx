@@ -2,7 +2,7 @@ import Link from 'next/link';
 
 export default function Page() {
   return (
-    <article className='md:leading-10 md:mt-10'>
+    <article className='md:leading-10 pt-10 md:mt-10'>
       <h1>About iVerb</h1>
       <p>
         Welcome to iVerb, the ultimate resource for mastering British English irregular verbs! Developed by Max with a passion for language learning, iVerb is designed to empower learners of all
@@ -18,7 +18,12 @@ export default function Page() {
       </p>
       <p>
         Follow the{' '}
-        <Link target='_blank' href={'https://twitter.com/HuckBIT'} rel='noopener noreferrer'>
+        <Link
+          target='_blank'
+          href={'https://twitter.com/HuckBIT'}
+          rel='noopener noreferrer'
+          className='text-primary dark:text-pastParticiple underline hover:no-underline hover:text-gray-500 font-playfairDisplay'
+        >
           author
         </Link>{' '}
         to stay updated on the latest app developments, language tips, and more. Join our community of language enthusiasts and embark on your journey to linguistic excellence with iVerb today!

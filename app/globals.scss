@@ -10,12 +10,13 @@
   --background-end-rgb: 255, 255, 255;
   --primary-text: #333;
   --primary-bg: #2a5174;
+  --primary-bg-light: #2a5174a3;
   --secondary-bg: #ebe8e8;
   --infinitive: #3d5371;
   --past: #8a7852;
   --pastParticiple: #c27658;
   --text-disabled: #a0a0a0;
-  --infinitivelight: #3d537186;
+  --infinitive-light: #3d537186;
   --past-500: #8a785272;
   --pastParticiple-500: #c276584a;
 }
@@ -23,11 +24,25 @@
 @media (prefers-color-scheme: dark) {
   :root {
     --foreground-rgb: #446f76;
-    --background-start: #000000;
-    --background-end: #000000;
+    --background-start: #1e293b;
+    --background-end: #1e293b;
     --primary-bg: #446f76;
     --primary-text: #333;
   }
+}
+
+.skip-link.sr-only-focusable:active,
+.skip-link.sr-only-focusable:focus {
+  position: fixed;
+  top: 0;
+  left: 0;
+  padding: 1em;
+  background: white;
+  border: 1px solid black;
+  z-index: 1000;
+  width: auto;
+  height: auto;
+  clip: auto;
 }
 
 body {
@@ -99,6 +114,7 @@ h6 {
     bottom: 0;
     left: 0;
     z-index: -1;
+    opacity: 0.4;
   }
 }
 

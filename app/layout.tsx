@@ -20,11 +20,14 @@ export default function RootLayout({
 }>) {
   return (
     <html lang='en' suppressHydrationWarning className='min-h-screen'>
-      <body className={`${lato.className} min-h-screen`}>
+      <body className={`${lato.className} min-h-screen dark:bg-gray-800`}>
         <div className='flex flex-col min-h-screen '>
           <Providers>
+            <a href='#main-content' className='skip-link sr-only sr-only-focusable'>
+              Skip to main content
+            </a>
             <NavBar />
-            <main className='grid grid-cols-1 gap-4 mt-10 mb-10 layout-container'>
+            <main id='main-content' className='grid grid-cols-1 gap-4 mt-10 pt-20 md:pt-10 mb-20 layout-container'>
               <div className='container mx-auto max-w-7xl px-2 sm:px-6 lg:px-8 flex-grow'>{children}</div>
             </main>
             <div className='layoutSvg'></div>

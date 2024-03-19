@@ -19,7 +19,7 @@ export default function Page() {
   const { loading } = useVerbs({ start, end });
 
   return (
-    <>
+    <div className='pt-10'>
       <h2 className='mt-10 font-playfairDisplay text-5xl'>Irregular verbs list</h2>
       <p>Click on any verb to explore its details, including various forms, conjugations, meaning.</p>
       <VerbsListing start={start} end={end} />
@@ -30,6 +30,6 @@ export default function Page() {
           </div>
         )}
       </div>
-    </>
+    </div>
   );
 }

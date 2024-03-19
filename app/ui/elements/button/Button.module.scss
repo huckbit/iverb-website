@@ -20,7 +20,7 @@
   color: white;
   transition: all 0.3s ease;
   &:hover {
-    background-color: var(--primary-bg);
+    background-color: var(--primary-bg-light);
   }
   &:disabled {
     background-color: var(--primary-bg);
@@ -31,9 +31,4 @@
 .secondary {
   background-color: (var(--background-start-rgb));
   color: (var(--secondary-text));
-}
-
-.danger {
-  background-color: rgb(var(--background-start-rgb));
-  color: (var(--danger-text));
 }

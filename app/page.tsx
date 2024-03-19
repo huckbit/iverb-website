@@ -25,11 +25,11 @@ export default function HomePage() {
       <div className='md:leading-loose md:mt-10'>
         <p className='md:text-xl'>
           You, can{' '}
-          <Link className='text-primary hover:text-gray-500 font-playfairDisplay text-xl' href='/verbs'>
+          <Link className='text-primary dark:text-pastParticiple underline hover:no-underline hover:text-gray-500 font-playfairDisplay text-xl' href='/verbs'>
             study
           </Link>
           , and{' '}
-          <Link href='/practice' className='text-primary hover:text-gray-500 font-playfairDisplay text-xl'>
+          <Link href='/practice' className='text-primary dark:text-pastParticiple underline hover:no-underline hover:text-gray-500 font-playfairDisplay text-xl'>
             practice
           </Link>{' '}
           your knowledge of irregular verbs with iVerb.
