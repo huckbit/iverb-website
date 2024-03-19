@@ -1,9 +1,11 @@
+@import '../../../settings';
+
 .block {
   padding: 2rem;
   border-radius: 0.5rem;
   color: white;
   text-align: center;
-  font-size: 3rem;
+  font-size: 2rem;
   min-width: 250px;
   font-family: 'Playfair Display', serif;
   display: flex;
@@ -11,6 +13,9 @@
   justify-content: center;
   :global {
     animation: fadeIn 1s ease-out;
+  }
+  @include breakpoint(medium) {
+    font-size: 3rem;
   }
 }
 

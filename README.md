@@ -8,11 +8,11 @@ Unit Test coverage [https://huckbit.github.io/iverb-website/](https://huckbit.gi
 
 #### iVerb graphQL
 
-  - Endpoint [https://iverb-graphql.huckbit.com/graphql](https://iverb-graphql.huckbit.com/graphql)
-  - repository [https://github.com/huckbit/iverb-graphql](https://github.com/huckbit/iverb-graphql)
+  - Endpoint: [https://iverb-graphql.huckbit.com/graphql](https://iverb-graphql.huckbit.com/graphql)
+  - Repository: [https://github.com/huckbit/iverb-graphql](https://github.com/huckbit/iverb-graphql)
 
 #### DictionaryAPI
 
-  - Endpoint[https://api.dictionaryapi.dev/api/v2/entries/en/go](https://api.dictionaryapi.dev/api/v2/entries/en/go)
-  - doc[https://dictionaryapi.dev/](https://dictionaryapi.dev/)
+  - Endpoint: [https://api.dictionaryapi.dev/api/v2/entries/en/go](https://api.dictionaryapi.dev/api/v2/entries/en/go)
+  - Doc: [https://dictionaryapi.dev/](https://dictionaryapi.dev/)
 

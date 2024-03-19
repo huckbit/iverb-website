@@ -14,7 +14,7 @@ export default function Page({ params }: { params: { infinitive: string } }) {
 
   return (
     <div className='my-2'>
-      <div className='page-container'>
+      <div className=''>
         <VerbListing infinitive={infinitive} />
       </div>
       <div className='mb-10 flex mt-10 justify-center'>

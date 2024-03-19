@@ -12,7 +12,7 @@ export default function ThemeSwitch() {
   useEffect(() => setMounted(true), []);
 
   if (!mounted)
-    /* show a placeholder image */
+    /* show a placeholder image if theme does not get resolved */
     return (
       <Image
         src='data:image/svg+xml;base64,PHN2ZyBzdHJva2U9IiNGRkZGRkYiIGZpbGw9IiNGRkZGRkYiIHN0cm9rZS13aWR0aD0iMCIgdmlld0JveD0iMCAwIDI0IDI0IiBoZWlnaHQ9IjIwMHB4IiB3aWR0aD0iMjAwcHgiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+PHJlY3Qgd2lkdGg9IjIwIiBoZWlnaHQ9IjIwIiB4PSIyIiB5PSIyIiBmaWxsPSJub25lIiBzdHJva2Utd2lkdGg9IjIiIHJ4PSIyIj48L3JlY3Q+PC9zdmc+Cg=='
@@ -26,10 +26,10 @@ export default function ThemeSwitch() {
     );
 
   if (resolvedTheme === 'dark') {
-    return <SunIcon className='h-6 w-6 text-white-500' onClick={() => setTheme('light')} />;
+    return <SunIcon role='button' className='h-6 w-6 text-white-500 cursor-pointer' onClick={() => setTheme('light')} />;
   }
 
   if (resolvedTheme === 'light') {
-    return <MoonIcon className='h-6 w-6 text-black-500' onClick={() => setTheme('dark')} />;
+    return <MoonIcon role='button' className='h-6 w-6 text-black-500 cursor-pointer' onClick={() => setTheme('dark')} />;
   }
 }

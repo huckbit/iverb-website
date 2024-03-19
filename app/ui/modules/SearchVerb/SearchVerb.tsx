@@ -51,7 +51,7 @@ export default function SearchVerb() {
         </p>
       )}
       {data?.verbByInfinitive?.infinitive && (
-        <div className='flex flex-col md:flex-row justify-center gap-3 mt-5 md:mt-10'>
+        <div className='flex flex-col md:flex-row justify-center gap-y-3 lg:gap-3 mt-5 md:mt-10'>
           <Block variant='infinitive'>{data?.verbByInfinitive?.infinitive}</Block>
           <Block variant='past'>{data?.verbByInfinitive?.past}</Block>
           <Block variant='pastParticiple'>{data?.verbByInfinitive?.pastParticiple}</Block>

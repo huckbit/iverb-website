@@ -9,16 +9,17 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
-  transition: all 0.3s ease-in-out;
   color: var(--primary-text);
-  &:hover {
-    cursor: pointer;
-    transform: translateX(0.2rem);
-    .chevronContainer {
+
+  @include breakpoint(medium) {
+    transition: all 0.3s ease-in-out;
+    &:hover {
       transform: translateX(0.5rem);
+      .chevronContainer {
+        transform: translateX(1rem);
+      }
     }
   }
-
   @include breakpoint(large) {
     min-width: 14rem;
     min-height: 8.5rem;
