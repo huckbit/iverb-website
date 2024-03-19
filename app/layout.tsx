@@ -5,8 +5,8 @@ import { Footer } from '@modules/Footer';
 import './globals.scss';
 import { Providers } from './providers';
 
-export const lato = Lato({ weight: '400', style: ['normal', 'italic'], subsets: ['latin'] });
-export const playfairDisplay = Playfair_Display({ weight: '400', style: ['normal', 'italic'], subsets: ['latin'] });
+const lato = Lato({ weight: '400', style: ['normal', 'italic'], subsets: ['latin'] });
+const playfairDisplay = Playfair_Display({ weight: '400', style: ['normal', 'italic'], subsets: ['latin'] });
 
 export const metadata: Metadata = {
   title: 'iVerb - Learn English verbs with iVerb',
