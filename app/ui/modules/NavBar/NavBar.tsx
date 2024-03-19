@@ -7,7 +7,6 @@ import { ThemeSwitch } from '@components/ThemeSwitch';
 
 export default function NavBar() {
   const [isOpen, setIsOpen] = useState(false);
-  const { resolvedTheme } = useTheme();
 
   const NAV_ITEMS = [
     { name: 'Verbs', href: '/verbs' },
@@ -65,7 +64,12 @@ export default function NavBar() {
         {isOpen && (
           <div className='space-y-1 px-2 pb-3 pt-2'>
             {NAV_ITEMS.map((item) => (
-              <Link key={item.name} href={item.href} className='text-black hover:text-gray-600 dark:text-gray-300 dark:hover:bg-gray-700 px-3 py-2 text-sm font-medium'>
+              <Link
+                key={item.name}
+                href={item.href}
+                onClick={() => setIsOpen(false)}
+                className='text-black hover:text-gray-600 dark:text-gray-300 dark:hover:bg-gray-700 px-3 py-2 text-sm font-medium'
+              >
                 {item.name}
               </Link>
             ))}
