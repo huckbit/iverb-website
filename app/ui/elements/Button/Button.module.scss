@@ -1,3 +1,5 @@
+@import '../../../settings';
+
 .btn {
   padding: 0.5rem 1rem;
   border: none;
@@ -19,16 +21,27 @@
   background-color: (var(--primary-bg));
   color: white;
   transition: all 0.3s ease;
-  &:hover {
-    background-color: var(--primary-bg-light);
-  }
   &:disabled {
     background-color: var(--primary-bg);
     color: (var(--text-disabled));
   }
+  @include breakpoint('md') {
+    &:hover {
+      background-color: var(--primary-bg-light);
+    }
+  }
 }
 
 .secondary {
-  background-color: (var(--background-start-rgb));
-  color: (var(--secondary-text));
+  background-color: (var(--past));
+  color: (var(--primary-text));
+  &:disabled {
+    background-color: var(--past);
+    color: (var(--text-disabled));
+  }
+  @include breakpoint('md') {
+    &:hover {
+      background-color: var(--past-500);
+    }
+  }
 }

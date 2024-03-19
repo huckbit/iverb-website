@@ -11,7 +11,7 @@ export default function VerbsListing({ start, end }: Pagination) {
     visible: (custom: number) => ({
       opacity: 1,
       transition: {
-        delay: custom * 0.1,
+        delay: custom * 0,
         duration: 0.1,
       },
     }),
