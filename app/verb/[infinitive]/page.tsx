@@ -17,7 +17,7 @@ export default function Page({ params }: { params: { infinitive: string } }) {
       <div className='page-container'>
         <VerbListing infinitive={infinitive} />
       </div>
-      <div className='mb-10 flex justify-center'>
+      <div className='mb-10 flex mt-10 justify-center'>
         <Button variant='primary' className='mb-10' onClick={goBack}>
           <ArrowLeftCircleIcon className='w-6 h-6 mr-2' />
           Go Back

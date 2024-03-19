@@ -33,7 +33,7 @@ export default function VerbListing({ infinitive }: { infinitive: string }) {
           <h2 className='text-center my-5 font-playfairDisplay mx-12'>{dictionaryData[0]?.meanings[0].definitions[0].definition}</h2>
         </div>
       )}
-      <div className='flex flex-col md:flex-row justify-center gap-3'>
+      <div className='flex flex-col lg:flex-row justify-center gap-3'>
         <Block variant='infinitive'>{data.verbByInfinitive.infinitive}</Block>
         <Block variant='past'>{data.verbByInfinitive.past}</Block>
         <Block variant='pastParticiple'>{data.verbByInfinitive.pastParticiple}</Block>

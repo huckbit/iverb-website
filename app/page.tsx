@@ -5,7 +5,7 @@ import Link from 'next/link';
 export default function HomePage() {
   return (
     <>
-      <article className='md:leading-relaxed md:mt-10'>
+      <article className='md:leading-relaxed mt-12 md:mt-10'>
         <div className='md:leading-loose'>
           <h1>Welcome to iVerb </h1>
           <h2 className='font-playfairDisplay italic'>– Your Ultimate Guide to Mastering 200 Irregular English Verbs!</h2>

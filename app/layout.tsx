@@ -1,5 +1,4 @@
 import type { Metadata } from 'next';
-import Head from 'next/head';
 import { Lato, Playfair_Display } from 'next/font/google';
 import { NavBar } from '@modules/NavBar';
 import { Footer } from '@modules/Footer';
@@ -21,22 +20,6 @@ export default function RootLayout({
 }>) {
   return (
     <html lang='en' suppressHydrationWarning className='min-h-screen'>
-      <Head>
-        {/* Global Site Tag (gtag.js) - Google Analytics */}
-        <script async src={`https://www.googletagmanager.com/gtag/js?id=${process.env.NEXT_PUBLIC_GOOGLE_ANALYTICS}`} />
-        <script
-          dangerouslySetInnerHTML={{
-            __html: `
-            window.dataLayer = window.dataLayer || [];
-            function gtag(){dataLayer.push(arguments);}
-            gtag('js', new Date());
-            gtag('config', '${process.env.NEXT_PUBLIC_GOOGLE_ANALYTICS}', {
-              page_path: window.location.pathname,
-            });
-          `,
-          }}
-        />
-      </Head>
       <body className={`${lato.className} min-h-screen dark:bg-gray-800`}>
         <div className='flex flex-col min-h-screen '>
           <Providers>
