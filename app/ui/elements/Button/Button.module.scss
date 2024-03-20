@@ -25,7 +25,7 @@
     background-color: var(--primary-bg);
     color: (var(--text-disabled));
   }
-  @include breakpoint('md') {
+  @include breakpoint('medium') {
     &:hover {
       background-color: var(--primary-bg-light);
     }
@@ -39,7 +39,7 @@
     background-color: var(--past);
     color: (var(--text-disabled));
   }
-  @include breakpoint('md') {
+  @include breakpoint('medium') {
     &:hover {
       background-color: var(--past-500);
     }

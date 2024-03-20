@@ -7,6 +7,7 @@ import { Block } from '@components/Block';
 import { Button } from '@elements/Button';
 import { ForwardIcon, SparklesIcon } from '@heroicons/react/24/outline';
 import { fadeInVariants, rotateTextVariants } from '@global/motionVariants';
+import { Loading } from '@components/Loading';
 
 const GET_RANDOM_VERB = gql`
   query {
@@ -39,7 +40,7 @@ export default function NextRandomVerb() {
   return (
     <div className={style.container}>
       {loading ? (
-        <p className='text-center'>Loading...</p>
+        <Loading />
       ) : (
         <>
           <h1 className='text-center'>Can you guess the result?</h1>

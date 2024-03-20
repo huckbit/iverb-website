@@ -1,6 +1,7 @@
 import { useState, useEffect } from 'react';
 import { useVerb } from '@hooks/useVerb';
 import { Block } from '@components/Block';
+import { Loading } from '@components/Loading';
 import useDictionaryAPI from '@hooks/useDictionaryAPI';
 import type { DictionaryData } from '@lib/definitions';
 
@@ -23,7 +24,7 @@ export default function VerbListing({ infinitive }: { infinitive: string }) {
     setDictionaryError(dictionaryAPIResult?.dictionaryError);
   }, [infinitive, dictionaryAPIResult?.dictionaryData, dictionaryAPIResult?.dictionaryError]);
 
-  if (loading) return <p className='text-center'>Loading...</p>;
+  if (loading) return <Loading />;
   if (error) return <p>An error fetching the data has occurred!</p>;
   return (
     <div>

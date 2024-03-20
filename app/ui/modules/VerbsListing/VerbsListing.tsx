@@ -3,6 +3,7 @@ import Link from 'next/link';
 import { motion } from 'framer-motion';
 import { fadeInVariants } from '@global/motionVariants';
 import { Card } from '@components/Card';
+import { Loading } from '@components/Loading';
 import type { Verb, Pagination } from '@lib/definitions';
 
 export default function VerbsListing({ start, end }: Pagination) {
@@ -19,7 +20,7 @@ export default function VerbsListing({ start, end }: Pagination) {
 
   const { loading, error, data } = useVerbs({ start: start - 1, end: end - 2 });
 
-  if (loading) return <p className='text-center'>Loading...</p>;
+  if (loading) return <Loading />;
   if (error) return <p>An error fetching the data has occurred!</p>;
 
   return (

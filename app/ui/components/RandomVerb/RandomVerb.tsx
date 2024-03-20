@@ -4,6 +4,7 @@ import { useQuery, gql } from '@apollo/client';
 import client from '@/apollo-client';
 import { motion } from 'framer-motion';
 import { fadeInVariants } from '@global/motionVariants';
+import { Loading } from '@components/Loading';
 
 const GET_RANDOM_VERB = gql`
   query {
@@ -28,7 +29,7 @@ const RandomVerb = () => {
     };
   }, [refetch]);
 
-  if (loading) return <p className='text-center'>Loading...</p>;
+  if (loading) return <Loading />;
   if (error) return <p>An error fetching the data has occurred!</p>;
 
   return (

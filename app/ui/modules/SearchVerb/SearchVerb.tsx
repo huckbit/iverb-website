@@ -1,7 +1,8 @@
 import { useState, useEffect } from 'react';
 import { useVerb } from '@/app/hooks/useVerb';
-import { Search } from '../../components/Search';
-import { Block } from '../../components/Block';
+import { Search } from '@components/Search';
+import { Block } from '@components/Block';
+import { Loading } from '@components/Loading';
 
 function useDebounce(value: string, delay: number) {
   const [debouncedValue, setDebouncedValue] = useState(value);
@@ -43,7 +44,11 @@ export default function SearchVerb() {
   return (
     <>
       <Search inputValue={infinitive} setInputValue={setInfinitive} placeholder='Search for a verb' />
-      {loading && <p className='text-center my-4'>Loading...</p>}
+      {loading && (
+        <div className='my-4'>
+          <Loading />
+        </div>
+      )}
       {error && <p>An error fetching the data has occurred!</p>}
       {showNoResults && (
         <p className='text-center my-4 text-xl'>
