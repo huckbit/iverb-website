@@ -6,7 +6,7 @@ import { motion } from 'framer-motion';
 import { Block } from '@components/Block';
 import { Button } from '@elements/Button';
 import { ForwardIcon, SparklesIcon } from '@heroicons/react/24/outline';
-import { fadeInVariants, rotateTextVariants } from '@global/motionVariants';
+import { fadeInVariants, rotateTextVariants, sparklingVariants } from '@global/motionVariants';
 import { Loading } from '@components/Loading';
 
 const GET_RANDOM_VERB = gql`
@@ -21,19 +21,16 @@ const GET_RANDOM_VERB = gql`
 
 export default function NextRandomVerb() {
   const [showResult, setShowResult] = useState(false);
-  const [showInfinitive, setShowInfinitive] = useState(true);
   const [key, setKey] = useState(0);
   const { loading, error, data, refetch } = useQuery(GET_RANDOM_VERB, {
     client,
   });
 
   const handleNext = () => {
-    setShowInfinitive(false);
     setShowResult(false);
     setTimeout(() => {
       refetch();
       setKey((prevKey) => prevKey + 1);
-      setShowInfinitive(true);
     }, 400);
   };
 
@@ -45,13 +42,15 @@ export default function NextRandomVerb() {
         <>
           <h1 className='text-center'>Can you guess the result?</h1>
           <div className={style.verbContainer}>
-            <motion.div variants={fadeInVariants} custom={0} initial='hidden' animate='visible'>
-              <Block key={key} variant='infinitive'>
-                {data?.randomVerb?.infinitive}
+            <motion.div variants={fadeInVariants} custom={0} initial='hidden' animate='visible' exit='exit'>
+              <Block variant='infinitive'>
+                <motion.span key={key} variants={sparklingVariants} initial='hidden' animate='visible'>
+                  {data?.randomVerb?.infinitive}
+                </motion.span>
               </Block>
             </motion.div>
             <motion.div variants={fadeInVariants} custom={1} initial='hidden' animate='visible'>
-              <Block key={key} variant='past'>
+              <Block variant='past'>
                 {showResult ? (
                   <motion.div key={key} variants={rotateTextVariants} custom={0} initial='hidden' animate='visible' exit='exit'>
                     {data?.randomVerb?.past}
@@ -62,7 +61,7 @@ export default function NextRandomVerb() {
               </Block>
             </motion.div>
             <motion.div variants={fadeInVariants} custom={2} initial='hidden' animate='visible'>
-              <Block key={key} variant='pastParticiple'>
+              <Block variant='pastParticiple'>
                 {showResult ? (
                   <motion.div key={key} variants={rotateTextVariants} custom={0} initial='hidden' animate='visible' exit='exit'>
                     {data?.randomVerb?.pastParticiple}

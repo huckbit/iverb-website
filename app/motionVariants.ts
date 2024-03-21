@@ -18,7 +18,7 @@ export const rotateTextVariants = {
 };
 
 export const sparklingVariants = {
-  hidden: { opacity: 0, scale: 0.8 },
+  hidden: { opacity: 0, scale: 0, transition: { duration: 0.5 } },
   visible: {
     opacity: 1,
     scale: 1,
@@ -27,4 +27,5 @@ export const sparklingVariants = {
       ease: 'backOut',
     },
   },
+  exit: { scale: 0.1, transition: { duration: 0.5 } },
 };
