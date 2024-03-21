@@ -13,7 +13,8 @@ export const fadeInVariants = {
 
 export const rotateTextVariants = {
   hidden: { opacity: 0, rotateX: '180deg' },
-  visible: { opacity: 1, rotateX: '0deg', transition: { duration: 1 } },
+  visible: { opacity: 1, rotateX: '0deg', transition: { delay: 0.1 } },
+  exit: { opacity: 0 },
 };
 
 export const sparklingVariants = {

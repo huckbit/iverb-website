@@ -29,11 +29,11 @@ export default function NextRandomVerb() {
 
   const handleNext = () => {
     setShowInfinitive(false);
-    refetch();
-    setKey((prevKey) => prevKey + 1);
+    setShowResult(false);
     setTimeout(() => {
+      refetch();
+      setKey((prevKey) => prevKey + 1);
       setShowInfinitive(true);
-      setShowResult(false);
     }, 400);
   };
 
@@ -53,7 +53,7 @@ export default function NextRandomVerb() {
             <motion.div variants={fadeInVariants} custom={1} initial='hidden' animate='visible'>
               <Block key={key} variant='past'>
                 {showResult ? (
-                  <motion.div variants={rotateTextVariants} custom={0} initial='hidden' animate='visible'>
+                  <motion.div key={key} variants={rotateTextVariants} custom={0} initial='hidden' animate='visible' exit='exit'>
                     {data?.randomVerb?.past}
                   </motion.div>
                 ) : (
@@ -64,7 +64,7 @@ export default function NextRandomVerb() {
             <motion.div variants={fadeInVariants} custom={2} initial='hidden' animate='visible'>
               <Block key={key} variant='pastParticiple'>
                 {showResult ? (
-                  <motion.div variants={rotateTextVariants} custom={0} initial='hidden' animate='visible'>
+                  <motion.div key={key} variants={rotateTextVariants} custom={0} initial='hidden' animate='visible' exit='exit'>
                     {data?.randomVerb?.pastParticiple}
                   </motion.div>
                 ) : (
