@@ -42,7 +42,7 @@ export default function SearchVerb() {
   }, [loading, data, infinitive]);
 
   return (
-    <>
+    <div className='min-h-[500px] lg:min-h-[300px]'>
       <Search inputValue={infinitive} setInputValue={setInfinitive} placeholder='Search for a verb' />
       {loading && (
         <div className='my-4'>
@@ -62,6 +62,6 @@ export default function SearchVerb() {
           <Block variant='pastParticiple'>{data?.verbByInfinitive?.pastParticiple}</Block>
         </div>
       )}
-    </>
+    </div>
   );
 }
