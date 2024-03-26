@@ -2,6 +2,7 @@ import type { Metadata } from 'next';
 import { Lato, Playfair_Display } from 'next/font/google';
 import { NavBar } from '@modules/NavBar';
 import { Footer } from '@modules/Footer';
+import { GdprBar } from '@components/GdprBar';
 import './globals.scss';
 import { Providers } from './providers';
 import { GoogleAnalytics } from '@next/third-parties/google';
@@ -33,6 +34,7 @@ export default function RootLayout({
               <div className='container mx-auto max-w-7xl px-2 sm:px-6 lg:px-8 flex-grow'>{children}</div>
             </main>
             <div className='layoutSvg'></div>
+            <GdprBar />
             <Footer />
           </Providers>
         </div>
