@@ -22,7 +22,7 @@ export default function RootLayout({
   return (
     <html lang='en' suppressHydrationWarning className='min-h-screen'>
       <body className={`${lato.className} min-h-screen dark:bg-gray-800`}>
-        <GoogleAnalytics gaId='G-XYZ' />
+        <GoogleAnalytics gaId={process.env.GA_PROPERTY_ID || ''} />
         <div className='flex flex-col min-h-screen '>
           <Providers>
             <a href='#main-content' className='skip-link sr-only sr-only-focusable'>
