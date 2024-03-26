@@ -4,6 +4,7 @@ import { NavBar } from '@modules/NavBar';
 import { Footer } from '@modules/Footer';
 import './globals.scss';
 import { Providers } from './providers';
+import { GoogleAnalytics } from '@next/third-parties/google';
 
 const lato = Lato({ weight: '400', style: ['normal', 'italic'], subsets: ['latin'] });
 const playfairDisplay = Playfair_Display({ weight: '400', style: ['normal', 'italic'], subsets: ['latin'] });
@@ -21,6 +22,7 @@ export default function RootLayout({
   return (
     <html lang='en' suppressHydrationWarning className='min-h-screen'>
       <body className={`${lato.className} min-h-screen dark:bg-gray-800`}>
+        <GoogleAnalytics gaId='G-XYZ' />
         <div className='flex flex-col min-h-screen '>
           <Providers>
             <a href='#main-content' className='skip-link sr-only sr-only-focusable'>
